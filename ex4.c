@@ -1,7 +1,7 @@
 /******************
-Name:
-ID:
-Assignment:
+Name: Jonathan Djerassi    
+ID: 303013098
+Assignment: ex4
 *******************/
 #include <stdio.h>
 #include <stdlib.h>
