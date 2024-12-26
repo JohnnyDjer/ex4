@@ -90,6 +90,7 @@ void task2HumanPyramid() {
     }
 
     // Print pyramid weights
+    printf("The total weight on each cheerleader is:\n");
     printPyramidWeights(0, 0, weights, 5);
 }
 
@@ -353,14 +354,15 @@ void task5CrosswordGenerator() {
     scanf("%d", &totalSlots);
 
     // Input for slot details (row, column, length, direction)
-    printf("Please enter the details for slot (Row, Column, Length, Direction):\n");
+    printf("Please enter the details for each slot (Row, Column, Length, Direction):\n");
     for (int i = 0; i < totalSlots; i++) {
         scanf("%d %d %d %c", &slots[i].row, &slots[i].col, &slots[i].length, &slots[i].direction);
     }
 
     // Input for number of words in the dictionary with validation
+    printf("Please enter the number of words in the dictionary:\n");
     do {
-        printf("Please enter the number of words in the dictionary:\n");
+
         scanf("%d", &totalWords);
         if (totalWords < 4) {
             printf("The dictionary must contain at least 4 words. Please enter a valid dictionary size:\n");
@@ -378,7 +380,7 @@ void task5CrosswordGenerator() {
 
     // Try to fill the crossword
     if (fillSlot(grid, slots, 0, totalSlots, words, wordUsed, totalWords)) {
-        printf("Solution:\n");
+        
         printGrid(grid, gridSize, 0, 0); // Print the filled grid
     } else {
         printf("This crossword cannot be solved.\n");
