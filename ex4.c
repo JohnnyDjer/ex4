@@ -228,7 +228,7 @@ void task4QueensBattle() {
 
     // Read the grid layout
     char areas[MAX_GRID_SIZE][MAX_GRID_SIZE];
-    printf("Please enter the %dx%d puzzle board:\n", n, n);
+    printf("Please enter a %d*%d puzzle board:\n", n, n);
     readGrid(areas, n);
 
     int board[MAX_GRID_SIZE][MAX_GRID_SIZE] = {0};
@@ -322,7 +322,7 @@ int fillSlot(char grid[MAX_GRID_SIZE][MAX_GRID_SIZE], Slot slots[], int slotInde
 void printGrid(char grid[MAX_GRID_SIZE][MAX_GRID_SIZE], int size, int row, int col) {
     if (row >= size) return; // Base case: all rows printed
     if (col >= size) {
-        printf("\n");
+        printf("|\n");
         printGrid(grid, size, row + 1, 0); // Move to the next row
         return;
     }
@@ -380,7 +380,7 @@ void task5CrosswordGenerator() {
 
     // Try to fill the crossword
     if (fillSlot(grid, slots, 0, totalSlots, words, wordUsed, totalWords)) {
-        
+
         printGrid(grid, gridSize, 0, 0); // Print the filled grid
     } else {
         printf("This crossword cannot be solved.\n");
